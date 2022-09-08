@@ -28,7 +28,10 @@ export class AppComponent implements OnInit {
   constructor(private poke: PokeapiService, private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    console.log(this.previousIds)
+    if(this.previousIds.length == 180){
+      this.previousIds = []
+    }
+
     let id = Math.floor(Math.random() * 152) + 1;
     if (this.previousIds != undefined) {
       this.parsedIds = this.previousIds.map((id) => {
