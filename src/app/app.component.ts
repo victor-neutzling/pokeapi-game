@@ -37,16 +37,17 @@ export class AppComponent implements OnInit {
   onSubmit(){
     let changed = true
     if(this.nameForm.valid){
-      if(this.nameForm.get('inp')?.value == this.name){
-        let wins = 0
+      if(this.nameForm.get('inp')?.value?.toLowerCase() == this.name){
           if(localStorage.getItem("wins")){
-            wins = parseInt(localStorage.getItem("wins") as string)
+            this.wins = parseInt(localStorage.getItem("wins") as string)
           }
           for(let i=0;i<this.nameArr.length;i++){
             (document.getElementById(i.toString()) as HTMLElement).textContent = this.nameArr[i]
           }
           this.nameForm.get('inp')?.disable()
-          localStorage.setItem("wins",(wins+1).toString())
+          localStorage.setItem("wins",(this.wins+1).toString());
+          this.wins = parseInt(localStorage.getItem("wins") as string);
+          (document.getElementById("next") as HTMLElement).style.display = "block";
       }else{
         if(this.tries > 0){
           this.tries--;
@@ -64,8 +65,10 @@ export class AppComponent implements OnInit {
           }
 
           localStorage.setItem("losses",(losses+1).toString())
-          alert('you lost')
-          window.location.reload();
+          alert('you lost');
+          (document.getElementById("next") as HTMLElement).style.display = "block";
+          this.losses = parseInt(localStorage.getItem("losses") as string)
+
 
         }
       }
