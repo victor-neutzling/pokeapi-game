@@ -66,6 +66,7 @@ export class AppComponent implements OnInit {
 
           localStorage.setItem("losses",(losses+1).toString())
           alert('you lost');
+          this.nameForm.get("inp")?.disable();
           (document.getElementById("next") as HTMLElement).style.display = "block";
           this.losses = parseInt(localStorage.getItem("losses") as string)
 
