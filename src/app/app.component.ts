@@ -49,7 +49,7 @@ export class AppComponent implements OnInit {
           this.wins = parseInt(localStorage.getItem("wins") as string);
           (document.getElementById("next") as HTMLElement).style.display = "block";
       }else{
-        if(this.tries > 0){
+        if(this.tries > 1){
           this.tries--;
           while(changed){
             let id = Math.floor(Math.random() * this.nameArr.length);
