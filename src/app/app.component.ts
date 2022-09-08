@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
   constructor(private poke: PokeapiService, private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    if(this.previousIds.length == 180){
+    if(this.previousIds.length == 150){
       this.previousIds = []
     }
 
