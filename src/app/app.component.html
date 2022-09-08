@@ -1,2 +1,18 @@
-<img src="{{ imgurl }}" alt="" />
-<h1>{{name}}</h1>
+<div class="wrapper">
+  <h1>Guess the Pokémon</h1>
+  <div class="losses-and-wins">
+    <h1>wins: {{wins}}</h1>
+    <h1>losses: {{losses}}</h1>
+  </div>
+  <div class="img-wrapper">
+    <img src="{{ imgurl }}" alt="" />
+  </div>
+  <div class="char-wrapper">
+    <h1 *ngFor="let item of nameArr; let i = index" [attr.id]="i">_</h1>
+  </div>
+  <form [formGroup]="nameForm" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="inp" id="">
+  </form>
+  <h1 class="tries">tries left: {{tries}}</h1>
+  <button (click)="reload()">next</button>
+</div>

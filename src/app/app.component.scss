@@ -1,3 +1,66 @@
-img{
-  width: 300px;
+@import '../../node_modules/reset-css/reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+.img-wrapper{
+  box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 8px;
+  padding: 12px;
+  background-color: #fefefe;
+  img{
+    width: 150px;
+    -webkit-filter: drop-shadow(rgba(0, 0, 0, 0.35) 0px 5px 15px);
+    filter: drop-shadow(rgba(0, 0, 0, 0.35) 0px 5px 15px);
+  }
+}
+.wrapper{
+  padding-top: 24px;
+  margin: -8px;
+  background: rgb(53,144,193);
+  background: linear-gradient(184deg, rgba(53,144,193,1) 0%, rgba(23,97,121,1) 47%, rgba(2,64,87,1) 100%);
+  color: #fefefe;
+  height: 100vh;
+  h1{
+    font-size: 48px;
+    text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  font-weight: bold!important;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .char-wrapper{
+    display: flex;
+    flex-direction: row;
+    h1{
+      margin: 4px;
+    }
+  }
+  input{
+    font-family: 'Poppins', sans-serif;
+    padding: 16px;
+    width: 240px;
+    font-size: large;
+    margin: 16px;
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  .losses-and-wins{
+    display: flex;
+    h1{
+      font-size: 24px;
+      margin: 24px;
+    }
+  }
+  button{
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 8px;
+    padding: 12px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
 }
