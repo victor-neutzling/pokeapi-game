@@ -28,6 +28,10 @@ export class AppComponent implements OnInit {
   constructor(private poke: PokeapiService, private fb: FormBuilder) {}
 
   ngOnInit(): void {
+    if(this.previousIds == undefined){
+      this.previousIds = []
+    }
+
     if(this.previousIds.length == 150){
       this.previousIds = []
     }
